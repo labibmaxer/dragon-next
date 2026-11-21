@@ -9,6 +9,9 @@ export const auth = betterAuth({
   database: mongodbAdapter(db, {
     client,
   }),
+   emailAndPassword: { 
+    enabled: true, 
+  }, 
 });
 // 9cnOLXUzvS6WBx61
 // labib00060_db_user
