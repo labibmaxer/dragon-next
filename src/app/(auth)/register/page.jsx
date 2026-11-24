@@ -11,9 +11,24 @@ const RegisterPage = () => {
     formState: { errors },
   } = useForm();
 
-  const handleRegister = (data) => {
-    console.log(data);
+  const handleRegister =async (data) => {
+    console.log(data, "data");
+    const { name, photo, email, password } = data;
+    console.log(name, photo, email, password);
+   const { data: res, error } = await authClient.signUp.email({
+    name: name, // required, The name of the user.
+    email: email, // required, The email address of the user.
+    password: password, // required, The password of the user. It should be at least 8 characters long and max 128 by default.
+    image: photo, // An optional profile image of the user.
+    callbackURL: "/", // An optional URL to redirect to after the user signs up.
+
+     
+});
+
+    console.log(res, error);
+
   };
+  
 
   return (
     <div className="container mx-auto min-h-[80vh] flex justify-center items-center bg-slate-100">
