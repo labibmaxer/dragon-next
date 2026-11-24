@@ -2,13 +2,19 @@
 import React from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
+import { email } from 'better-auth';
 const LoginPage = () => {
 
     const {register, handleSubmit, formState: {errors}} = useForm()
-const handleloginfuc = (data) => {
+const handleloginfuc = async (data) => {
  console.log(data);
  console.log(errors );
- 
+const {data: res, error} = await aithClient.signIn.email({
+    email: data.email,
+    password: data.password,
+    rememberMe: true,
+    callbackURL: "https://example.com/callback",
+})
  
 
 }
