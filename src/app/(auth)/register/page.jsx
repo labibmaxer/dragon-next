@@ -1,8 +1,8 @@
- 'use client'
+'use client'
 import React from 'react';
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
-
+import { authClient } from '@/lib/auth-client';
 const RegisterPage = () => {
   const {
     register,
