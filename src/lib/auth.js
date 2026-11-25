@@ -14,6 +14,12 @@ export const auth = betterAuth({
    emailAndPassword: { 
     enabled: true, 
   }, 
+   socialProviders: {
+        google: { 
+            clientId: process.env.GOOGLE_CLIENT_ID , 
+            clientSecret: process.env.GOOGLE_CLIENT_SECRET , 
+        }, 
+    },
 });
 // 9cnOLXUzvS6WBx61
 // labib00060_db_user
