@@ -1,10 +1,15 @@
+ 'use client'
  import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import userAvatar from "@/assets/user.png";
 import NavLink from "./NavLink";
+import { authClient } from "@/lib/auth-client"
 
 const Navbar = () => {
+  const { data: session } = authClient.useSession()
+console.log(session, 'session');
+
   return (
     <div className="container mx-auto flex justify-between gap-4 mt-6">
       <div></div>
